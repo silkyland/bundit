@@ -447,3 +447,7 @@
 @endsection
 
 ```
+
+25. เพิ่มลิงค์ไปยัง `/category` ใน `resources/views/master.blade.php` ทำเอง
+
+26. อัพเดทงานขึ้น `GitHub`

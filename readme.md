@@ -450,4 +450,19 @@
 
 25. เพิ่มลิงค์ไปยัง `/category` ใน `resources/views/master.blade.php` ทำเอง
 
+26. ทำการ Join ตางรางระหว่าง `Activity` กับ `Category` โดย
+
+- ที่ไฟล์ app/Models/Category.php เพิ่ม
+  ```php
+    public function posts(){
+      return $this->hasMany(Activity::class);
+    }
+  ```
+  - ที่ไฟล์ app/Models/Activity.php เพิ่ม
+  ```php
+    public function category(){
+      return $this->belongsTo(Category::class);
+    }
+  ```
+
 26. อัพเดทงานขึ้น `GitHub`

@@ -243,7 +243,7 @@
      https://raw.githubusercontent.com/silkyland/todos/master/resources/views/layout/master.blade.php
     ```
 
-16. ไฟล์ `resources/views/layout/home.blade.php` เพิ่ม
+16. ไฟล์ `resources/views/home.blade.php` เพิ่ม
 
     ```
     คัดลอกจาก :
@@ -251,7 +251,7 @@
     https://raw.githubusercontent.com/silkyland/todos/master/resources/views/home.blade.php
     ```
 
-17. ไฟล์ `resources/views/layout/create.blade.php` เพิ่ม
+17. ไฟล์ `resources/views/create.blade.php` เพิ่ม
 
     ```
     คัดลอกจาก :

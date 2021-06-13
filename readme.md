@@ -19,6 +19,7 @@
     - resources/views/home.blade.php
     - resources/views/create.blade.php
     - resources/views/auth/login.blade.php
+    - resources/views/auth/register.blade.php
 
 6. ในไฟล์ routes/web.php ให้เพิ่มเหล่านี้ลงไป 
     ```php 

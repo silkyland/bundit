@@ -449,6 +449,7 @@
 ```
 
 25. เพิ่มลิงค์ไปยัง `/category` ใน `resources/views/master.blade.php`
+
     เดิม 
     ```html
       @if(auth()->check()) สวัสดี, {{auth()->user()->name}} |

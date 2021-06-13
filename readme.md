@@ -50,9 +50,9 @@
    - `2021..create_activities_tables...php` ให้เพิ่ม
 
    ```php
-       $table->int('category_id');
+       $table->integer('category_id');
        $table->string('name');
-       $table->int('status');
+       $table->integer('status');
    ```
 
    - `2021..create_categories_tables...php` ให้เพิ่ม
@@ -281,4 +281,14 @@
     แล้วเรียกลิงค์ 
     ```bash
         http://127.0.0.1:8000/เพิ่มผู้ใช้งานตัวอย่าง
+    ```
+
+20. ไฟล์ `resources/views/category/index.blade.php` เพิ่ม 
+    ```html
+    <pre>
+        @extends('layout.master')
+        @section('content')
+
+        @endsection
+    <pre>
     ```

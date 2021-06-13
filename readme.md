@@ -266,3 +266,15 @@
 
     https://raw.githubusercontent.com/silkyland/todos/master/resources/views/login.blade.php
     ```
+
+19. สร้าง user ตัวอย่างมา 1 คนโดยเปิด `routes/web.php` แล้วเพิ่มดังนี้
+    ```php
+        Route::get('/เพิ่มผู้ใช้งานตัวอย่าง', function(){
+            $user = new User();
+            $user->name = "สมชาย ใจดี";
+            $user->email = "somchai@gmail.com";
+            $user->password = Hash::make("1234");
+            $user->save();
+            return "Success! โปรดอย่ารีเฟรชหน้านี้มันจะเพิ่มสามชายอีกคน หรือไม่ก็ฟ้องว่าอีเมล์ซ้ำ";
+        });
+    ```

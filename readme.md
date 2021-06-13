@@ -405,7 +405,7 @@
 @endsection
 ```
 
-23. ไฟล์ `resources/views/home.blade.php` แก้ไขเป็น
+24. ไฟล์ `resources/views/home.blade.php` แก้ไขเป็น
 
 ```php
 @extends('layout.master')
@@ -444,7 +444,6 @@
       </tbody>
   </table>
 </div>
-{{ $posts->links() }}
 @endsection
 
 ```

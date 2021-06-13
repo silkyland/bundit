@@ -19,6 +19,10 @@
    - resources/views/layout/master.blade.php
    - resources/views/home.blade.php
    - resources/views/create.blade.php
+   - resources/views/edit.blade.php
+   - resources/views/category/index.blade.php
+   - resources/views/category/create.blade.php
+   - resources/views/category/edit.blade.php
    - resources/views/auth/login.blade.php
    - resources/views/auth/register.blade.php
 

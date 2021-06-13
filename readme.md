@@ -240,7 +240,7 @@
 
     ```
     คัดลอกจาก :
-     https://github.com/silkyland/todos/blob/master/resources/views/layout/master.blade.php
+     https://raw.githubusercontent.com/silkyland/todos/master/resources/views/layout/master.blade.php
     ```
 
 16. ไฟล์ `resources/views/layout/home.blade.php` เพิ่ม

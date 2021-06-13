@@ -448,15 +448,21 @@
 
 ```
 
-25. เพิ่มลิงค์ไปยัง `/category` ใน `resources/views/master.blade.php` โดยแก้ไขเป็น
-
-```php
-      @if(auth()->check())
-      สวัสดี, {{auth()->user()->name}} | <a href="/category">จัดการหมวดหมู่</a> | <a href="/logout">ออกจากระบบ</a>
-      @else
-      สวัสดี, บุคคลทั่วไป โปรด <a href="/login">เข้าสู่ระบบ</a>
+25. เพิ่มลิงค์ไปยัง `/category` ใน `resources/views/master.blade.php`
+    เดิม 
+    ```html
+      @if(auth()->check()) สวัสดี, {{auth()->user()->name}} |
+      <a href="/logout">ออกจากระบบ</a> @else สวัสดี, บุคคลทั่วไป โปรด
+      <a href="/login">เข้าสู่ระบบ</a>
       @endif
-```
+    ```
+    โดยแก้ไขเป็น
+    ```html
+      @if(auth()->check()) สวัสดี, {{auth()->user()->name}} |
+      <a href="/category">จัดการหมวดหมู่</a> | <a href="/logout">ออกจากระบบ</a> @else
+      สวัสดี, บุคคลทั่วไป โปรด <a href="/login">เข้าสู่ระบบ</a> @endif
+    ```
+  
 
 26. ทำการ Join ตางรางระหว่าง `Activity` กับ `Category` โดย
 

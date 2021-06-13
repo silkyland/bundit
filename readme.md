@@ -137,7 +137,7 @@
             $result = Category::all();
             $data = [
                 "categories" => $result
-            ]
+            ];
             return view('create', $data);
         }
 
@@ -234,4 +234,35 @@
             $category->delete();
             return redirect('/category');
         }
+    ```
+
+15. ไฟล์ `resources/views/layout/master.blade.php` เพิ่ม
+
+    ```
+    คัดลอกจาก :
+     https://github.com/silkyland/todos/blob/master/resources/views/layout/master.blade.php
+    ```
+
+16. ไฟล์ `resources/views/layout/home.blade.php` เพิ่ม
+
+    ```
+    คัดลอกจาก :
+
+    https://raw.githubusercontent.com/silkyland/todos/master/resources/views/home.blade.php
+    ```
+
+17. ไฟล์ `resources/views/layout/create.blade.php` เพิ่ม
+
+    ```
+    คัดลอกจาก :
+
+    https://raw.githubusercontent.com/silkyland/todos/master/resources/views/create.blade.php
+    ```
+
+18. ไฟล์ `resources/views/layout/auth/login.blade.php` เพิ่ม
+
+    ```
+    คัดลอกจาก :
+
+    https://raw.githubusercontent.com/silkyland/todos/master/resources/views/login.blade.php
     ```

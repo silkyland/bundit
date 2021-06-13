@@ -268,6 +268,7 @@
     ```
 
 19. สร้าง user ตัวอย่างมา 1 คนโดยเปิด `routes/web.php` แล้วเพิ่มดังนี้
+
     ```php
         Route::get('/เพิ่มผู้ใช้งานตัวอย่าง', function(){
             $user = new User();
@@ -278,17 +279,63 @@
             return "Success! โปรดอย่ารีเฟรชหน้านี้มันจะเพิ่มสามชายอีกคน หรือไม่ก็ฟ้องว่าอีเมล์ซ้ำ";
         });
     ```
-    แล้วเรียกลิงค์ 
+
+    แล้วเรียกลิงค์
+
     ```bash
         http://127.0.0.1:8000/เพิ่มผู้ใช้งานตัวอย่าง
     ```
 
-20. ไฟล์ `resources/views/category/index.blade.php` เพิ่ม 
+20. ไฟล์ `resources/views/category/index.blade.php` เพิ่ม
     ```html
-    <pre>
-        @extends('layout.master')
-        @section('content')
+    @extends('layout.master') @section('content')
+    <h1>หมวดหมู่</h1>
+    <a class="btn btn-primary" href="/category/create">+ เพิ่มหมวดหมู่</a>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ชื่อ</th>
+          <th>จัดการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($categories as $category)
+        <tr>
+          <td>{{$category->id}}</td>
+          <td>{{$category->name}}</td>
+          <td>
+            <a class="btn btn-warning" href="/category/edit/{{$category->id}}"
+              >แก้ไข</a
+            >
+            <a class="btn btn-danger" href="/category/delete/{{$category->id}}"
+              >ลบ</a
+            >
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+    @endsection
+    ```
+21. ไฟล์ `resources/views/category/create.blade.php` เพิ่ม
 
-        @endsection
-    <pre>
+    ```html
+    @extends('layout.master') @section('content')
+    <h1>เพิ่มหมวดหมู่</h1>
+    <form action="/category/add" method="post">
+      @csrf
+      <div class="form-group">
+        <label>ชื่อ</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="กรอกชื่อหมวดหมู่"
+          required="true"
+          min="3"
+        />
+      </div>
+      <button type="submit">บันทึก</button>
+    </form>
+    @endsection
     ```

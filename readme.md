@@ -469,7 +469,7 @@
 
 - ที่ไฟล์ app/Models/Category.php เพิ่ม
   ```php
-    public function posts(){
+    public function activities(){
       return $this->hasMany(Activity::class);
     }
   ```

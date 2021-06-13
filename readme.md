@@ -46,7 +46,27 @@
     ```php
         $table->string('name');
     ```
-9. พิมพ์ 
+9. สร้างฐานข้อมูลชื่อ `todo` collation เป็น `utf8mb4_general_ci` 
+10. พิมพ์ 
     ```bash
         php artisan migrate
+    ```
+11. สร้าง Controller ชื่อว่า `AuthController` เพิ่มฟังก์ชั่น `login()`, `doLogin()`, `logout($id)`, `register()` โดยมีข้อมูลเหล่านี้
+    ```php
+        public function login(){
+            return view('auth.login');
+        }
+
+        public function doLogin(Request $request){
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                return redirect('/');
+            }
+
+            return back()->withErrors(['message' => "ไม่สามารถเข้าสู่ระบบได้"]);
+        }
+
+
     ```

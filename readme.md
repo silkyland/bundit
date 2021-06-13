@@ -1,6 +1,9 @@
 โจทย์
 ---
 1. ให้น.ศ. สร้างโปรเจคขึ้นใหม่ชื่อว่า todoapp เอาขึ้น github เป็นแบบ public
+     ```bash
+        composer create-project laravel/laravel todoapp --prefer-dist
+    ```
 2. สร้าง HomeController, CategoryController โดยพิมพ์
     ```bash
         php artisan make:controller HomeController
@@ -68,5 +71,40 @@
             return back()->withErrors(['message' => "ไม่สามารถเข้าสู่ระบบได้"]);
         }
 
+        public function register(){
+            return view('auth.register');
+        }
 
+        public function doRegister(Request $request){
+            $email = $request->input('email');
+            $name = $request->input('name');
+            $password = $request->input("password");
+            $password_confirmation = $request->input("password_confirmation");
+
+            if($password != $password_confirmation){
+                return back()->withErrors(['message' => 'รหัสผ่าน และ รหัสผ่านยืนยันไม่ตรงกัน']);
+            }
+
+            $user = new User();
+            $user->email = $email;
+            $user->name = $name;
+            $user->password = Hash::make($password);
+            $user->save();
+
+            return redirect('login');
+        }
+
+        public function logout(){
+            Auth::logout();
+            return redirect('/login');
+        }
+    ```
+12. เพิ่ม routes ใน  `routes/web.php` ดังนี้
+     ```php
+        ...
+        Route::get('/login', [AuthController::class, 'login']);
+        Route::post('/doLogin', [AuthController::class, 'doLogin']);
+        Route::get('/register', [AuthController::class, 'register']);
+        Route::post('/doRegister', [AuthController::class, 'doRegister']);
+        Route::get('/logout', [AuthController::class, 'logout']);
     ```
